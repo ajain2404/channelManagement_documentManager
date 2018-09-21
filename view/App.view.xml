@@ -1,0 +1,36 @@
+<mvc:View controllerName="com.evonik.appsDocumentManager.controller.App" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" class="sapUiTinyMargin sapUiContentPadding">
+				<content>
+					<Table items="{/}" mode="Delete" delete="handleDelete" updateFinished="onListUpdateFinished">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="{i18n>tblTitle}"/>
+									<ToolbarSpacer/>
+									<Button icon = "sap-icon://add-document" press ="onAddDocument" tooltip="{i18n>btnAddDocumentToolTip}"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column><Text text="{i18n>tblColDocumentName}"/></Column>
+							<Column><Text text="{i18n>tblColCreationDate}"/></Column>
+							<Column><Text text="{i18n>tblColFileSize}"/></Column>
+							<Column><Text text="{i18n>tblColDownload}"/></Column>
+						</columns>
+						<ColumnListItem>
+							<cells>
+								<Text text="{filename}"/>
+								<Text text="{creationDate}"/>
+								<Text text="{fileLength} Bytes"/>
+								<Link text="{i18n>linkTextDownload}" target="_blank" href="/docservice/DocumentManager/Document/{/repositoryName}{downloadLink}"/>
+							</cells>
+						</ColumnListItem>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
