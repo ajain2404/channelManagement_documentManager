@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<Dialog title="{i18n>fileUploadDialogTitle}" class="sapUiContentPadding">
+		<content>
+			<u:FileUploader id="fileUploader" name="myFileUpload"
+				tooltip="{i18n>fileUploadToolTip}" uploadComplete="handleUploadComplete" sendXHR="true"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>btnUpload}" press="handleUploadPress"/>
+			<Button text="{i18n>btnUploadCancel}" press="handleUploadCancel"/>
+			
+		</buttons>
+		
+	</Dialog>
+</core:FragmentDefinition>
